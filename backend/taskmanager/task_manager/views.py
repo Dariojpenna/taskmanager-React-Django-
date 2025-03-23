@@ -23,9 +23,14 @@ class RegistrationView(APIView):
         return Response(status.HTTP_200_OK, data={"message": "User created successfully"})
     
 class TaskView(APIView):
+    authentication_classes = [JWTAuthentication]
+    permission_classes =[IsAuthenticated]
+
     def get(self,request):
         if Task.objects.filter(asigned_user=request.data['username']):
-            return Response(status.HTTP_200_OK, data={"message": "Task retrieved successfully"})
+            tasks= Task.objects.filter(asigned_user=request.data['username'])
+            return Response(status.HTTP_200_OK, tasks)
+        return Response(status.HTTP_200_OK, data={"message": "There is not tasks yet"})
     
 class CreateTaskView(APIView):
     def post(self,request):
