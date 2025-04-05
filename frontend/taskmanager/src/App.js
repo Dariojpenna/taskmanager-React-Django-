@@ -1,23 +1,70 @@
-import logo from './logo.svg';
+
+import { Link, Route, Routes, useNavigate } from 'react-router-dom';
 import './App.css';
+import LoginForm from './components/loginForm/LoginForm';
+import { useState } from 'react';
+import RegisterForm from './components/registerForm/RegisterForm';
+import TaskList from './components/taskList/TaskList';
+import CreateNewTask from './components/createNewTask/CreateNewTask';
+import TaskDetail from './components/taskDetail/TaskDetail'
+
+
 
 function App() {
+  const [isAuthenticated,setIsAuthenticated] = useState(
+    !!localStorage.getItem('authToken')
+  );
+  const navigate = useNavigate()
+
+  const handleLogOut = () => {
+    localStorage.removeItem('authToken');
+    setIsAuthenticated(false);
+    navigate('/')
+  
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <main>
+        
+          <nav>
+            {!isAuthenticated ? (
+              <>
+                <Link to='/'>Login</Link>
+              </>
+            ) : (
+              <span onClick={handleLogOut}>Log Out</span>
+            )}  
+            {!isAuthenticated && (
+              <>
+                <Link to='/register'>Sing Up</Link>
+              </>
+            )}  
+            {isAuthenticated && (
+              <>
+                <Link to='/tasks'>Task List</Link>
+              </>
+            )}  
+            {isAuthenticated && (
+              <>
+                <Link to='/create_task/'>New Task</Link>
+              </>
+            )}
+            
+            
+          </nav>
+
+
+            <Routes>
+              <Route path='/' element={<LoginForm setIsAuthenticated={setIsAuthenticated} />} />
+              <Route path='/register' element={<RegisterForm />}/>
+              <Route path='/tasks' element={<TaskList  />}/>
+              <Route path='create_task/' element= {<CreateNewTask />} />
+              <Route path="/task_detail/:id" element={<TaskDetail />} />
+            </Routes>
+        
+      </main>
+      
     </div>
   );
 }

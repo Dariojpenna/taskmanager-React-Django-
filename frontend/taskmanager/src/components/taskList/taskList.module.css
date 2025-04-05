@@ -1,0 +1,44 @@
+body{
+    background-color: rgb(246, 246, 242);
+}
+
+.taskListContainer{
+    background-color: rgb(245, 248, 250);
+    height: auto;
+    width: 70%;
+    margin: auto;
+    margin-top: 10%;
+    border: 1px solid black;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    padding: 1rem;
+}
+
+
+.ulContainer{
+    background-color: beige;
+    padding: 0%;
+    width: 90%;
+    margin: auto;
+    background-color:  rgb(245, 248, 250);
+}
+
+.liContainer{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    align-items: center;
+    border: 1px solid black;
+    padding: 0.5rem;
+    background-color:rgb(246, 246, 242);
+}
+
+.pContainer{
+    display: flex;
+    justify-content: start;
+}
+
+
+

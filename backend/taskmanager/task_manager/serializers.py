@@ -7,6 +7,12 @@ class UserSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class TaskSerializer(serializers.ModelSerializer):
+    assigned_user = UserSerializer()
+    priority_display = serializers.SerializerMethodField()
     class Meta:
         model = Task
         fields= '__all__'
+        extra_fields = ['priority_display'] 
+
+    def get_priority_display(self,obj):
+        return obj.get_priority_display()

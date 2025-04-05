@@ -1,0 +1,83 @@
+
+body{
+    background-color: rgb(246, 246, 242);
+}
+
+.loginFormContainer{
+    width: 40%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    margin-top: 5%;
+    
+}
+
+.loginTitle{
+    display: flex;
+    color: rgb(18, 20, 18);
+    justify-content: center;
+    margin-bottom: 4rem;
+    font-size: 3rem;
+}
+
+
+form{
+    height: 20rem;
+    background-color: rgb(246, 246, 246);
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.labelContaner{
+    display: flex;
+    justify-items: start;
+    align-items: start;
+    margin: 1rem;
+}
+
+.inputContainer{
+    display: flex;
+    margin: 1rem;
+    margin-left: 2rem;
+}
+
+.label{
+    margin-inline: 1rem;
+}
+
+.input{
+    font-size: medium;
+    width: 50%;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    
+}
+
+input:focus {
+    box-shadow: 0 0 10px rgba(123, 123, 127, 0.5); 
+    background-color: #f0f8ff; 
+}
+
+.btn{
+    color: white;
+    justify-items: end;
+    margin: 0.4rem;
+    width: 75%;
+    font-size:x-large;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    background-color: rgb(29, 29, 35);
+    cursor: pointer;
+    
+}
+
+.btn:hover{
+    font-size: x-large;
+    background-color: rgb(145, 140, 140);
+}

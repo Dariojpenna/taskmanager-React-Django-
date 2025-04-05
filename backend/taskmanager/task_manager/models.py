@@ -4,17 +4,18 @@ from django.contrib.auth.models import AbstractUser, Permission
 # Create your models here.
 
 class User(AbstractUser):
-    username= models.CharField(max_length=100)
+    username= models.CharField(max_length=100,unique=True)
     email= models.EmailField(unique=True)
     groups = models.ManyToManyField('auth.Group', related_name='task_manager_users')
     user_permissions = models.ManyToManyField('auth.Permission', related_name='task_manager_user_permissions')
+    
+    USERNAME_FIELD = 'username'
     
     def __str__(self): 
         return f"{self.username}, {self.email}"
     
 class Task(models.Model):
-    priorities = [(1,'alta'), (2,'media'), (3,'baja')]
-
+    priorities = [(1,'Alta'), (2,'Media'), (3,'Baja')]
     task_name= models.CharField(max_length=100)
     inicial_date= models.DateField(auto_now_add=True)
     final_date= models.DateField()
