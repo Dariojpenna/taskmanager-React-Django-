@@ -36,27 +36,7 @@ const TaskList = () => {
     }, [token])
 
 
-    const handleDeleteTask = async (taskId)=>{
-
-        try {
-            const response = await fetch(`http://127.0.0.1:8000/task_manager/delete_task/${taskId}`,{
-                method: 'POST',
-                headers: {
-                    'Content-Type':'application/json',
-                    'Authorization': `Bearer ${token}`
-                }
-            })
-            const updatedTasks = await response.json();
-
-            if(response.ok && Array.isArray(updatedTasks)){
-                setTaskList(updatedTasks);
-            } else {
-                throw new Error("Error deleting task");
-            }        
-        }catch(error){
-            console.error ("Delete task Error: ", error)
-        }
-    }
+    
 
 
     if(taskList.length === 0){
@@ -85,7 +65,7 @@ const TaskList = () => {
                         </p>
                     </li>
                     {taskList.map((task)=>(
-                        <Task key={task.id} task={task} onDelete={handleDeleteTask}  />
+                        <Task key={task.id} task={task}  />
                     ))}
                 </ul>
                 

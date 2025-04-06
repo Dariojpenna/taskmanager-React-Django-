@@ -10,7 +10,6 @@ const CreateNewTask = () => {
         task_name:'',
         inicial_date:'',
         final_date:'',
-        assigned_user:'',
         task_description:'',
         priority: '2',
     })
@@ -65,12 +64,6 @@ const CreateNewTask = () => {
                 </div>
                 <div className={styles.inputContainer}>
                     <input className={styles.input} type='date' id='final_date' name='final_date' onChange={(e)=>handleChangeService(e,setFormData)}  required/>
-                </div>
-                <div className={styles.labelContaner}>
-                    <label className={styles.label} htmlFor='assigned_user'>asigned to:</label>
-                </div>
-                <div className={styles.inputContainer}>
-                    <input className={styles.input} type='text' id='assigned_user' name='assigned_user' onChange={(e)=>handleChangeService(e,setFormData)} required/>
                 </div>
                 <div className={styles.labelContaner}>
                     <label className={styles.label} htmlFor='task_description'>Description:</label>

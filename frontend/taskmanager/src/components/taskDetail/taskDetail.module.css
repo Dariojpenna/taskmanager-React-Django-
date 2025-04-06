@@ -1,0 +1,127 @@
+body{
+    background-color: beige;
+}
+
+.container{
+    width: 75%;
+    margin: auto;
+}
+
+.liContainer{
+    list-style-type: none;
+    align-items: center;
+    border: 1px solid black;
+    padding: 0.5rem;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    background-color:rgb(246, 246, 242);
+}
+
+.nameDetailContainer{
+    display: flex;
+    justify-content: center;
+    height: 4rem;
+    align-items: center;
+    font-size: large;
+}
+
+.taskHead{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    
+}
+
+.btn{
+    color: white;
+    justify-items: end;
+    margin: 0.4rem;
+    width: 75%;
+    font-size:large;
+    border-radius: 10px;
+    background-color: rgb(29, 29, 35);
+    cursor: pointer;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+
+
+
+.btn:hover{
+    font-size: x-large;
+    background-color: rgb(145, 140, 140);
+}
+
+
+.pContainer{
+    display: flex;
+    justify-content: start;
+    margin: 0.5rem;
+    
+}
+
+.priorityContainer{
+    display: flex;
+    justify-content: start;
+    
+    
+    
+}
+
+.alta {
+    background-color: red;
+    color: white;
+    padding: 3px;
+    width: 50%;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.media {
+    background-color: orange;
+    color: white;
+    width: 50%;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.baja {
+    background-color: green;
+    color: white;
+    width: 50%;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.priorityStatus{
+    display: flex;
+    align-items: center;
+    margin: auto;
+}
+
+.priorityContainer{
+    display: flex;
+    width: 15%;
+}
+
+.taskItem{
+    display: flex;
+    justify-content: center;
+}

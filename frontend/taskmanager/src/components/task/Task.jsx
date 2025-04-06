@@ -37,9 +37,7 @@ const Task = ({task, onDelete}) => {
 
     }
 
-    const handleDeleteTask = async () => {
-        await onDelete(task.id); 
-    };
+  
 
     const handleTaskDetail = () => {
         try {
@@ -55,14 +53,11 @@ return (
     <div className={styles.Container}>
         <li  className={styles.liContainer}>
             <p className={styles.pContainer} onClick={()=>{handleTaskDetail()}}><span className={styles.name}>{task.task_name}</span></p>
-            {/* <p><strong>Inicial Date: </strong>{task.inicial_date}</p> */}
             <p className={styles.pContainer} >{task.final_date}</p>
-            {/* <p><strong>Assigned to: </strong>{task.assigned_user.username}</p> */}
-            {/* <p><strong>Description: </strong>{task.task_description}</p> */}
             <p className={`${styles.taskItem} ${styles[priorityClass]}`} >{task.priority_display}</p>
             <p className={styles.pContainer} >{status ? 'Complete':'Pending' }</p>
             <button className={styles.statusBtn} onClick={handleStatus}>Status</button>
-            {/* <button onClick={handleDeleteTask}>Delete</button> */}
+
         </li>
         
     </div>

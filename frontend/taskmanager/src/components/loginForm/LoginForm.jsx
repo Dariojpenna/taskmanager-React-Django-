@@ -27,6 +27,7 @@ const LoginForm = ({setIsAuthenticated}) => {
             }
             }catch(error){
                 console.error ("Register Error: ", error )
+                alert('user or password not found')
             }
 
     }

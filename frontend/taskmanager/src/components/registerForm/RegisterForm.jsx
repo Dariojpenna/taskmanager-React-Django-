@@ -34,6 +34,7 @@ const RegisterForm = () => {
 
         }catch(error){
             console.error("Register Error: ", error);
+            alert('Register Error')
         }
 
     }
